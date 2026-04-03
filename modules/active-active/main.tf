@@ -63,11 +63,12 @@ locals {
 }
 
 resource "azurerm_availability_set" "fgtavset" {
-  count               = var.fgt_availability_set ? 1 : 0
-  name                = format("%s-availabilityset", var.prefix)
-  location            = var.location
-  managed             = true
-  resource_group_name = var.resource_group_name
+  count                       = var.fgt_availability_set ? 1 : 0
+  name                        = format("%s-availabilityset", var.prefix)
+  location                    = var.location
+  platform_fault_domain_count = var.platform_fault_domain_count
+  managed                     = true
+  resource_group_name         = var.resource_group_name
 }
 
 resource "azurerm_lb_backend_address_pool_address" "fgtifcext2elbbackendpool" {
