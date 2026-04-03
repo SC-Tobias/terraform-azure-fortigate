@@ -157,23 +157,23 @@ variable "fgt_additional_custom_data" {
 variable "fgt_customdata_variables" {
   description = "FortiGate configuration appended to cloud-init"
   type = map(object({
-    fgt_vm_name               = string
-    fgt_license_file          = string
-    fgt_license_fortiflex     = string
-    fgt_username              = string
-    fgt_ssh_public_key_file   = string
-    fgt_config_ha             = bool
-    fgt_external_ipaddr       = string
-    fgt_external_mask         = string
-    fgt_external_gw           = string
-    fgt_internal_ipaddr       = string
-    fgt_internal_mask         = string
-    fgt_internal_gw           = string
-    fgt_ha_peerips            = list(string)
-    vnet_network              = string
+    fgt_vm_name                = string
+    fgt_license_file           = string
+    fgt_license_fortiflex      = string
+    fgt_username               = string
+    fgt_ssh_public_key_file    = string
+    fgt_config_ha              = bool
+    fgt_external_ipaddr        = string
+    fgt_external_mask          = string
+    fgt_external_gw            = string
+    fgt_internal_ipaddr        = string
+    fgt_internal_mask          = string
+    fgt_internal_gw            = string
+    fgt_ha_peerips             = list(string)
+    vnet_network               = string
     fgt_additional_custom_data = string
-    fgt_fortimanager_ip       = string
-    fgt_fortimanager_serial   = string
+    fgt_fortimanager_ip        = string
+    fgt_fortimanager_serial    = string
   }))
 }
 
@@ -236,4 +236,10 @@ variable "fortinet_tags" {
     template  = "Active-Active-ELB-ILB"
     provider  = "7EB3B02F-50E5-4A3E-8CB8-2E12925831AP"
   }
+}
+
+variable "platform_fault_domain_count" {
+  description = "Specifies the number of fault domains that are used"
+  type        = number
+  default     = 3
 }
