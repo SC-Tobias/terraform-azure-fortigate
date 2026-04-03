@@ -237,3 +237,9 @@ variable "fortinet_tags" {
     provider  = "7EB3B02F-50E5-4A3E-8CB8-2E12925831AP"
   }
 }
+
+variable "platform_fault_domain_count" {
+  description = "Specifies the number of fault domains that are used"
+  type = number
+  default = 3 
+}
